@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <p style="color: green"><%= notice %></p>
+      <h1>Products</h1>
+      <%= link_to "Add new product", new_product_path, class: 'btn btn-primary' %>
+
+      <div id="products"><br>
+        <% @products.each do |product| %>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= product.title %></h5>
+              <p class="card-text"><%= product.description %></p>
+              <hr>
+              <p class="card-text"><%= product.vendor.name %></p>
+              <hr>
+              <p class="card-text"><small class="text-muted"><%= number_to_currency(product.price) %></small></p>
+              <%= link_to "Show this product", product, class: 'btn btn-primary' %>
+            </div>
+          </div>
+          <br>
+        <% end %>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>

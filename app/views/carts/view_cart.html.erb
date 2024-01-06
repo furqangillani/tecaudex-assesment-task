@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <h1> Order View Summary </h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">Order Number <%= @order.order_number %></div>
+          <div class="col-md-3">Order Total <%= @order.total %></div>
+          <div class="col-md-3">Tax Rate <%= @order.tax %></div>
+          <div class="col-md-3">Delivery Charges <%= @order.delivery_charges %></div>
+        </div>
+        <div class="row">
+          <% if @cart_items.present? %>
+            <% @cart_items.each do |cart_item| %>
+              <h6>ID:  <%= cart_item[:id] %></h6>
+              <h6>Product Title:  <%= cart_item[:title] %></h6>
+              <h6>Quantity:  <%= cart_item[:quantity] %></h6>
+              <h6>Price:  <%= cart_item[:price] %></h6>
+              <h6>description:  <%= cart_item[:description] %></h6>
+            <% end %>
+            <div class="row">
+              <div class="col-md-6">
+                <button class="btn btn-primary">
+                  <%= link_to "Complete Order", complete_order_carts_path %>
+                </button>
+              </div>
+              <div class="col-md-6">
+                <button class="btn btn-danger">
+                  <%= link_to "Delete", delete_order_carts_path %>
+                </button>
+              </div>
+            </div>
+          <% else %>
+            <h1> Order is empty </h1>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

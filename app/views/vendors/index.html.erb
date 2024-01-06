@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <p style="color: green"><%= notice %></p>
+      <h1>Vendors</h1>
+      <%= link_to "Add new vendor", new_vendor_path, class: 'btn btn-primary' %>
+
+      <div id="vendors"><br>
+        <% @vendors.each do |vendor| %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= vendor.name %>></h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <%= link_to "Show this vendor", vendor, class: 'btn btn-primary' %>
+            </div>
+          </div>
+          <br>
+        <% end %>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>

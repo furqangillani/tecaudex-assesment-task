@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <%= render @vendor %>
+      <div>
+        <%= link_to "Edit this vendor", edit_vendor_path(@vendor) %> |
+        <%= link_to "Back to vendors", vendors_path %><br>
+
+        <%= button_to "Destroy this vendor", @vendor, method: :delete, class: 'btn btn-primary'%>
+      </div>
+    </div>
+  </div>
+</div>
